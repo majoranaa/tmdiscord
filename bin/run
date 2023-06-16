@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+DIR="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+TOP="$(dirname ${DIR})"
+
+poetry run python -m tmdiscord
