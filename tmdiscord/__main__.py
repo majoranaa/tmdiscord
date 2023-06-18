@@ -1,4 +1,4 @@
-from tmdiscord import bot
+from tmdiscord import cli
 
 import sys
 
@@ -6,7 +6,7 @@ EXIT_SUCCESS = 0
 EXIT_FAILURE = 1
 
 try:
-    bot.run()
+    cli.run()
     sys.exit(EXIT_SUCCESS)
 except Exception as e:
     msg = str(e)

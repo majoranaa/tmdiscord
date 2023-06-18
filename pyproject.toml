@@ -8,6 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+jsonargparse = {extras = ["signatures"], version = "^4.21.2"}
 
 
 [tool.poetry.group.dev.dependencies]

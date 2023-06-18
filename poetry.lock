@@ -95,6 +95,17 @@ files = [
 ]
 
 [[package]]
+name = "docstring-parser"
+version = "0.15"
+description = "Parse Python docstrings in reST, Google and Numpydoc format"
+optional = false
+python-versions = ">=3.6,<4.0"
+files = [
+    {file = "docstring_parser-0.15-py3-none-any.whl", hash = "sha256:d1679b86250d269d06a99670924d6bce45adc00b08069dae8c47d98e89b667a9"},
+    {file = "docstring_parser-0.15.tar.gz", hash = "sha256:48ddc093e8b1865899956fcc03b03e66bb7240c310fac5af81814580c55bf682"},
+]
+
+[[package]]
 name = "filelock"
 version = "3.12.2"
 description = "A platform independent file lock."
@@ -140,6 +151,21 @@ files = [
 license = ["ukkonen"]
 
 [[package]]
+name = "importlib-resources"
+version = "5.12.0"
+description = "Read resources from Python packages"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "importlib_resources-5.12.0-py3-none-any.whl", hash = "sha256:7b1deeebbf351c7578e09bf2f63fa2ce8b5ffec296e0d349139d43cca061a81a"},
+    {file = "importlib_resources-5.12.0.tar.gz", hash = "sha256:4be82589bf5c1d7999aedf2a45159d10cb3ca4f19b2271f8792bc8e6da7b22f6"},
+]
+
+[package.extras]
+docs = ["furo", "jaraco.packaging (>=9)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-lint"]
+testing = ["flake8 (<5)", "pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=1.3)", "pytest-flake8", "pytest-mypy (>=0.9.1)"]
+
+[[package]]
 name = "iniconfig"
 version = "2.0.0"
 description = "brain-dead simple config-ini parsing"
@@ -149,6 +175,42 @@ files = [
     {file = "iniconfig-2.0.0-py3-none-any.whl", hash = "sha256:b6a85871a79d2e3b22d2d1b94ac2824226a63c6b741c88f7ae975f18b6778374"},
     {file = "iniconfig-2.0.0.tar.gz", hash = "sha256:2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"},
 ]
+
+[[package]]
+name = "jsonargparse"
+version = "4.21.2"
+description = "Implement minimal boilerplate CLIs derived from type hints and parse from command line, config files and environment variables."
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "jsonargparse-4.21.2-py3-none-any.whl", hash = "sha256:291f4a9902ba7eb2412f3182438b348acc3c98a064b992dc8a16b93a10143f51"},
+    {file = "jsonargparse-4.21.2.tar.gz", hash = "sha256:d8354450d131e557f318568369008bde0bf2506f6fa61cc8a0a3217320db882c"},
+]
+
+[package.dependencies]
+docstring-parser = {version = ">=0.15", optional = true, markers = "extra == \"signatures\""}
+PyYAML = ">=3.13"
+typeshed-client = {version = ">=2.1.0", optional = true, markers = "extra == \"signatures\""}
+
+[package.extras]
+all = ["jsonargparse[argcomplete]", "jsonargparse[fsspec]", "jsonargparse[jsonnet]", "jsonargparse[jsonschema]", "jsonargparse[omegaconf]", "jsonargparse[reconplogger]", "jsonargparse[ruyaml]", "jsonargparse[signatures]", "jsonargparse[typing-extensions]", "jsonargparse[urls]"]
+argcomplete = ["argcomplete (>=2.0.0)"]
+dev = ["jsonargparse[doc]", "jsonargparse[mypy]", "jsonargparse[test]", "pre-commit (>=2.19.0)", "pycodestyle (>=2.5.0)", "tox (>=3.25.0)"]
+doc = ["Sphinx (>=1.7.9)", "autodocsumm (>=0.1.10)", "sphinx-autodoc-typehints (>=1.19.5)", "sphinx-rtd-theme (>=0.4.3)"]
+fsspec = ["fsspec (>=0.8.4)"]
+jsonnet = ["jsonnet (>=0.13.0)", "jsonnet-binary (>=0.17.0)"]
+jsonschema = ["jsonschema (>=3.2.0)"]
+maintainer = ["bump2version (>=0.5.11)"]
+mypy = ["jsonargparse[types-pyyaml]", "mypy (>=0.701)"]
+omegaconf = ["omegaconf (>=2.1.1)"]
+reconplogger = ["reconplogger (>=4.4.0)"]
+ruyaml = ["ruyaml (>=0.20.0)"]
+signatures = ["docstring-parser (>=0.15)", "jsonargparse[typing-extensions]", "typeshed-client (>=2.1.0)"]
+test = ["attrs (>=22.2.0)", "jsonargparse[test-no-urls]", "jsonargparse[types-pyyaml]", "pydantic (>=1.10.7)", "responses (>=0.12.0)", "types-requests (>=2.28.9)"]
+test-no-urls = ["coverage (>=4.5.1)", "pytest (>=6.2.5)", "pytest-subtests (>=0.8.0)"]
+types-pyyaml = ["types-PyYAML (>=6.0.11)"]
+typing-extensions = ["typing-extensions (>=3.10.0.0)"]
+urls = ["requests (>=2.18.4)"]
 
 [[package]]
 name = "mccabe"
@@ -409,6 +471,20 @@ testing = ["build[virtualenv]", "filelock (>=3.4.0)", "flake8-2020", "ini2toml[l
 testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "pytest", "pytest-enabler", "pytest-xdist", "tomli", "virtualenv (>=13.0.0)", "wheel"]
 
 [[package]]
+name = "typeshed-client"
+version = "2.3.0"
+description = "A library for accessing stubs in typeshed."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "typeshed_client-2.3.0-py3-none-any.whl", hash = "sha256:27976287e0682be3005233f08f6f3cedf0c496413bcb213378f46e08798988c4"},
+    {file = "typeshed_client-2.3.0.tar.gz", hash = "sha256:e2734755f93a0b6c1da8daad11670c75a36583d889d4d7b110eb882765b8bced"},
+]
+
+[package.dependencies]
+importlib-resources = ">=1.4.0"
+
+[[package]]
 name = "typing-extensions"
 version = "4.6.3"
 description = "Backported and Experimental Type Hints for Python 3.7+"
@@ -442,4 +518,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "274d6899b35642814e9f4dc9d59d142e0bff185fedf10851ace48a6385377a15"
+content-hash = "1bdf5bdef516f3979027764e922839dda5827292598928820ac165eb3de1dc87"
