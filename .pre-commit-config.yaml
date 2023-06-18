@@ -1,0 +1,25 @@
+repos:
+  - repo: https://github.com/python-poetry/poetry
+    rev: '1.5.1'
+    hooks:
+      - id: poetry-check
+        name: Poetry Check
+      - id: poetry-lock
+        name: Poetry Lock
+  - repo: local
+    hooks:
+      - id: tests
+        name: Run Tests
+        entry: scripts/test
+        language: script
+        pass_filenames: false
+      - id: lint
+        name: Lint Files
+        entry: scripts/lint
+        language: script
+        pass_filenames: false
+      - id: typecheck
+        name: Type Check Files
+        entry: scripts/typecheck
+        language: script
+        pass_filenames: false

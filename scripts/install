@@ -5,6 +5,7 @@ cd "${TOP}"
 
 if command -v poetry; then
     poetry install --no-root "${@}"
+    poetry run pre-commit install --hook-type pre-push
 else
     echo "Please install poetry. [https://python-poetry.org/docs/#installation]"
     exit 1
