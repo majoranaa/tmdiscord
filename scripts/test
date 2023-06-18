@@ -1,6 +1,5 @@
-#!/usr/bin/env sh
 DIR="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 TOP="$(dirname ${DIR})"
 cd "${TOP}"
 
-poetry run python -m tmdiscord "${@}"
+poetry run python -m pytest --import-mode=importlib "${@}"

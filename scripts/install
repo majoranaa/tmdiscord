@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+DIR="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+TOP="$(dirname ${DIR})"
+cd "${TOP}"
+
+if command -v poetry; then
+    poetry install --no-root "${@}"
+else
+    echo "Please install poetry. [https://python-poetry.org/docs/#installation]"
+    exit 1
+fi
