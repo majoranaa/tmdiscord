@@ -1,0 +1,15 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "tmdiscord",
+            "type": "python",
+            "request": "launch",
+            // Note that vscode automatically changes cwd to workspaceFolder
+            "module": "tmdiscord"
+        }
+    ]
+}
