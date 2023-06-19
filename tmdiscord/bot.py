@@ -4,6 +4,7 @@ import requests
 
 from tmdiscord import config as bot_config
 
+
 MESSAGE_TEMPLATE = "<@{user_id}> It's yo turn, {name} [{url}]"
 PLAYER_URL_TEMPLATE = "https://terraforming-mars.herokuapp.com/player?id={player_id}"
 

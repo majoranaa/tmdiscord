@@ -3,4 +3,4 @@ DIR="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 TOP="$(dirname ${DIR})"
 cd "${TOP}"
 
-poetry run python -m tmdiscord --config "${TOP}/config/prod.yml" "${@}"
+poetry run python -m tmdiscord --config "${TOP}/config/dev.yml" "${@}"
