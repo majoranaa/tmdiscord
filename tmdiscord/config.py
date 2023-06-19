@@ -8,5 +8,5 @@ jsonargparse.set_docstring_parse_options(attribute_docstrings=True)
 class TerraformingMarsDiscordBotConfig:
     """Discord bot for Terraforming Mars Open-Source."""
 
-    delay_length: int = 60
-    """Delay in minutes."""
+    webhook_url: str
+    """Discord webhook url."""

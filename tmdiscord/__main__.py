@@ -1,7 +1,5 @@
 from tmdiscord import cli
 
-import jsonargparse
-
 import sys
 import traceback
 
@@ -13,7 +11,7 @@ EXIT_USAGE_ERROR = 2
 try:
     cli.run()
     sys.exit(EXIT_SUCCESS)
-except jsonargparse.ArgumentError:
+except cli.UsageError:
     sys.exit(EXIT_USAGE_ERROR)
 except Exception as e:
     # TODO: use logger

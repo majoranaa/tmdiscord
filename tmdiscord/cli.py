@@ -2,6 +2,8 @@ import jsonargparse
 from tmdiscord import bot
 from tmdiscord import config as bot_config
 
+UsageError = jsonargparse.ArgumentError
+
 
 def parse_args():
     return jsonargparse.CLI(
