@@ -10,3 +10,15 @@ class TerraformingMarsDiscordBotConfig:
 
     webhook_url: str
     """Discord webhook url."""
+
+    game_url: str
+    """Terraforming Mars game url."""
+
+    debug: bool = False
+    """Only print messages to stdout. Don't send to Discord API."""
+
+    poll_interval: int = 5
+    """How many seconds in between Terraforming Mars polls."""
+
+    verbose: bool = False
+    """More debug output."""
