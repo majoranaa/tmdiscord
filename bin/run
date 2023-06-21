@@ -1,6 +1,6 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 DIR="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 TOP="$(dirname ${DIR})"
 cd "${TOP}"
 
-poetry run python -m tmdiscord --config "${TOP}/config/prod.yml" "${@}"
+exec poetry run python -m tmdiscord --config "${TOP}/config/prod.yml" "${@}"
