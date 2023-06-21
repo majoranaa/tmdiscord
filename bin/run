@@ -3,4 +3,10 @@ DIR="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 TOP="$(dirname ${DIR})"
 cd "${TOP}"
 
-exec poetry run python -m tmdiscord --config "${TOP}/config/prod.yml" "${@}"
+CONFIG="${TOP}/config/prod.yml"
+if [[ "${DEV}" == "true" ]]; then
+    CONFIG="${TOP}/config/dev.yml"
+fi
+echo "Using config [${CONFIG}]"
+
+exec poetry run python -m tmdiscord --config "${CONFIG}" "${@}"
