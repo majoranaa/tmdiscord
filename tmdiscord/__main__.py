@@ -1,7 +1,9 @@
 from tmdiscord import cli
+import tmdiscord.logging
+from tmdiscord.logging import logger
 
 import sys
-import traceback
+
 
 EXIT_SUCCESS = 0
 EXIT_FAILURE = 1
@@ -13,8 +15,13 @@ try:
     sys.exit(EXIT_SUCCESS)
 except cli.UsageError:
     sys.exit(EXIT_USAGE_ERROR)
-except Exception as e:
-    # TODO: use logger
-    print(f"Encountered internal error. Exiting with code [{EXIT_FAILURE}].")
-    [print(line, end="") for line in traceback.format_exception(e)]
+except Exception:
+    logger.opt(exception=True).error(
+        "Encountered internal error. Exiting with code [{exit_code}].", exit_code=EXIT_FAILURE
+    )
+    if not tmdiscord.logging.is_configured():
+        logger.critical(
+            "Logger has not been configured. "
+            "This means that not even CLI argument parsing completed."
+        )
     sys.exit(EXIT_FAILURE)

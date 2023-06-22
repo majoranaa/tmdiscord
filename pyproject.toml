@@ -10,6 +10,9 @@ readme = "README.md"
 python = "^3.11"
 jsonargparse = {extras = ["signatures"], version = "^4.21.2"}
 requests = "^2.31.0"
+google-cloud-logging = ">=3.0.0"
+loguru = "^0.7.0"
+rich-argparse = "^1.1.1"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -26,3 +29,11 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 line-length = 100
+
+[tool.mypy]
+disable_error_code = ["method-assign", "no-any-return", "no-untyped-call"]
+strict = true
+
+[[tool.mypy.overrides]]
+module = "test.*"
+disable_error_code = "no-untyped-def"

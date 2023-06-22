@@ -1,4 +1,6 @@
-debug: true
-verbose: true
+logging_env: LOCAL
+level: DEBUG
 webhook_url: https://discordapp.com/api/webhooks/1120189909978857622/PukSc8P0K0rpQjhxmTGwVeotThdr6g4Pm5uEyBzjIYDQvKzZtk6hBWwLIVW33Tr5XhCq
-game_url: https://terraforming-mars.herokuapp.com/api/game?id=g153f56027107
+game_urls:
+  - https://terraforming-mars.herokuapp.com/api/game?id=g153f56027107
+polling_interval: 5
