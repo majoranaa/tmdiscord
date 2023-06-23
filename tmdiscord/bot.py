@@ -10,7 +10,8 @@ from typing import Type
 
 
 GAME_URL_TEMPLATE = "https://terraforming-mars.herokuapp.com/api/game?id={game_id}"
-PLAYER_URL_TEMPLATE = "https://terraforming-mars.herokuapp.com/api/player?id={player_id}"
+PLAYER_API_URL_TEMPLATE = "https://terraforming-mars.herokuapp.com/api/player?id={player_id}"
+PLAYER_URL_TEMPLATE = "https://terraforming-mars.herokuapp.com/player?id={player_id}"
 
 DISCORD_MAPPING = {
     "david": 448538894695268352,
@@ -51,7 +52,7 @@ class Game:
         tm_res = res.json()
         players = tm_res["players"]
         arbitrary_player_id = players[0]["id"]
-        self.arbitrary_player_url = PLAYER_URL_TEMPLATE.format(player_id=arbitrary_player_id)
+        self.arbitrary_player_url = PLAYER_API_URL_TEMPLATE.format(player_id=arbitrary_player_id)
         self.logger.debug("Arbitrary player url: {}", self.arbitrary_player_url)
         self.player_mapping = {
             player["color"]: {"name": player["name"], "id": player["id"]} for player in players
