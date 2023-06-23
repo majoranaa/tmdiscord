@@ -26,9 +26,10 @@ def run() -> None:
     parser = jsonargparse.capture_parser(parse_args)
     try:
         config = parse_args()
-        logger.info(f"Configuration dump:\n{json.dumps(dataclasses.asdict(config), indent=4)}")
         tmdiscord.logging.configure_logger(config.logging_env, config.level, config.logging_file)
-        bot.TerraformingMarsDiscordBot(config).run()
+        logger.info(f"Configuration dump:\n{json.dumps(dataclasses.asdict(config), indent=4)}")
+        with bot.TerraformingMarsDiscordBot(config) as tm_bot:
+            tm_bot.run()
     except jsonargparse.ArgumentError as e:
         logger.error(e)
         print(parser.format_help())

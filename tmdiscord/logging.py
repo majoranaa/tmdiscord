@@ -30,11 +30,10 @@ class LoguruFilter(logging.Filter):
             return True
         extra: dict[str, Any] = record.__dict__["extra"]
         del record.__dict__["extra"]
-        # taken from logging library (logging.Logger.makeRecord)
-        for key in extra:
-            if (key in ["message", "asctime"]) or (key in record.__dict__):
-                raise KeyError("Attempt to overwrite %r in LogRecord" % key)
-            record.__dict__[key] = extra[key]
+        for key, value in extra.items():
+            if "json_fields" not in record.__dict__:
+                record.__dict__["json_fields"] = {}
+            record.__dict__["json_fields"][key] = value
         return True
 
 
@@ -112,9 +111,7 @@ class __LoggingConfiguration:
         logger.remove()
         if env == LoggingEnvironment.CLOUD:
             cloud_logging_client = google.cloud.logging.Client()
-            handler = google.cloud.logging.handlers.StructuredLogHandler(
-                project_id=cloud_logging_client.project
-            )
+            handler = cloud_logging_client.get_default_handler()
             handler.addFilter(LoguruFilter())
             logger.add(handler, level=level.name, format="{message}")
         else:  # LoggingEnvironment.LOCAL
@@ -124,6 +121,7 @@ class __LoggingConfiguration:
             handler = google.cloud.logging.handlers.StructuredLogHandler(
                 stream=open(filename, "w"), project_id=cloud_logging_client.project
             )
+            handler.addFilter(LoguruFilter())
             logger.add(handler, level=level.name, format="{message}")
         logger.info(f"Configured logger for {env.name} env.")
 

@@ -20,5 +20,3 @@ COPY config config/
 COPY tmdiscord tmdiscord/
 
 ENTRYPOINT ["tini", "--", "./bin/run"]
-
-CMD ["--debug=true"]

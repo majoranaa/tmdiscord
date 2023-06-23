@@ -17,8 +17,8 @@ class TerraformingMarsDiscordBotConfig:
     webhook_url: str
     """Discord webhook url."""
 
-    game_urls: List[str]
-    """Terraforming Mars game urls."""
+    game_ids: List[str]
+    """Terraforming Mars game ids."""
 
     poll_interval: int = 30
     """How many seconds in between Terraforming Mars polls."""

@@ -526,13 +526,13 @@ files = [
 
 [[package]]
 name = "jsonargparse"
-version = "4.21.2"
+version = "4.22.0"
 description = "Implement minimal boilerplate CLIs derived from type hints and parse from command line, config files and environment variables."
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "jsonargparse-4.21.2-py3-none-any.whl", hash = "sha256:291f4a9902ba7eb2412f3182438b348acc3c98a064b992dc8a16b93a10143f51"},
-    {file = "jsonargparse-4.21.2.tar.gz", hash = "sha256:d8354450d131e557f318568369008bde0bf2506f6fa61cc8a0a3217320db882c"},
+    {file = "jsonargparse-4.22.0-py3-none-any.whl", hash = "sha256:6d9a7d1b9ca89fd6bf49a725ad786b0b4fcfe51efa6f27ecc331c4bb0f82d95e"},
+    {file = "jsonargparse-4.22.0.tar.gz", hash = "sha256:32339056285fcc931ad7f2095233160df1b50f348bb30694574539930727155f"},
 ]
 
 [package.dependencies]
@@ -718,13 +718,13 @@ files = [
 
 [[package]]
 name = "platformdirs"
-version = "3.7.0"
+version = "3.8.0"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "platformdirs-3.7.0-py3-none-any.whl", hash = "sha256:cfd065ba43133ff103ab3bd10aecb095c2a0035fcd1f07217c9376900d94ba07"},
-    {file = "platformdirs-3.7.0.tar.gz", hash = "sha256:87fbf6473e87c078d536980ba970a472422e94f17b752cfad17024c18876d481"},
+    {file = "platformdirs-3.8.0-py3-none-any.whl", hash = "sha256:ca9ed98ce73076ba72e092b23d3c93ea6c4e186b3f1c3dad6edd98ff6ffcca2e"},
+    {file = "platformdirs-3.8.0.tar.gz", hash = "sha256:b0cabcb11063d21a0b261d557acb0a9d2126350e63b70cdf7db6347baea456dc"},
 ]
 
 [package.extras]
