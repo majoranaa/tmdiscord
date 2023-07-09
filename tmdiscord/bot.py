@@ -19,6 +19,7 @@ DISCORD_MAPPING = {
     "kai": 735572794871513088,
     "charles": 1115485549541732363,
     "jessica": 735554088866939091,
+    "jess": 735554088866939091,
 }
 
 ACTION_TEMPLATE = "<@{discord_id}> It's yo turn now, {name}. [{url}]"

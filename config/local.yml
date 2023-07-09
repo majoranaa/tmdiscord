@@ -2,6 +2,5 @@ logging_env: LOCAL
 level: DEBUG
 webhook_url: https://discordapp.com/api/webhooks/1120189909978857622/PukSc8P0K0rpQjhxmTGwVeotThdr6g4Pm5uEyBzjIYDQvKzZtk6hBWwLIVW33Tr5XhCq
 game_ids:
-  - g153f56027107
-  - ge9b54045cfdf
+  - g5d6db25646d0
 poll_interval: 5

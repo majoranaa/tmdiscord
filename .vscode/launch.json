@@ -9,7 +9,11 @@
             "type": "python",
             "request": "launch",
             // Note that vscode automatically changes cwd to workspaceFolder
-            "module": "tmdiscord"
+            "module": "tmdiscord",
+            "args": [
+                "--config",
+                "config/local.yml"
+            ]
         }
     ]
 }
