@@ -14,6 +14,8 @@ import sys
 
 # opt() will not preserve previous options.
 # https://loguru.readthedocs.io/en/stable/resources/recipes.html#preserving-an-opt-parameter-for-the-whole-module
+# Note that the logger created by bind() will not have the modified opt method. Therefore, all
+# calls to opt() must precede any call to bind(), or it must also have **LOGURU_OPTIONS.
 LOGURU_OPTIONS = {"capture": False}
 logger = loguru_logger.opt(**LOGURU_OPTIONS)
 logger.opt = functools.partial(logger.opt, **LOGURU_OPTIONS)

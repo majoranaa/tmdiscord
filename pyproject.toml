@@ -14,7 +14,6 @@ google-cloud-logging = ">=3.0.0"
 loguru = "^0.7.0"
 rich-argparse = "^1.1.1"
 
-
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.0.0"
 black = "^23.3.0"
